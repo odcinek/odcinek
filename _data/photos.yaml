@@ -1,0 +1,77 @@
+photos:
+    - title: Mily Way above Santa Cruz, CA
+      layout: photo
+      img: IMG_6282
+      img_original: IMG_6282.original
+      description: Taken from Pigeon Point Lighthouse not too long before New Moon. HWY 1 is surprisingly busy at 2 am.
+      instagram: https://www.instagram.com/p/Bir5rPflVS6/
+      facebook: https://www.facebook.com/photo.php?fbid=1868361109883274
+
+    - title: Liftoff
+      img: IMG_0093
+      album: NasaInsight
+      description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce id felis nec ipsum ultrices commodo. Ut in lobortis libero.
+      instagram: https://www.instagram.com/p/BiZOvyeFDaG/
+      facebook: https://www.facebook.com/odcinek/posts/1860941307291921
+
+    - title: Liftoff (with NiSi Natural Night filter)
+      img: IMG_0092
+      album: NasaInsight
+      description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce id felis nec ipsum ultrices commodo. Ut in lobortis libero.
+      instagram: https://www.instagram.com/p/BiZOvyeFDaG/
+      facebook: https://www.facebook.com/odcinek/posts/1860941307291921
+
+    - title: Waiting for NASA Insight launch
+      img: IMG_0082
+      album: NasaInsight
+      description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce id felis nec ipsum ultrices commodo. Ut in lobortis libero.
+      facebook: https://www.facebook.com/photo.php?fbid=1860892380630147
+
+    - title: Waiting for Falcon 9 Iridium 5
+      img: IMG_0072
+      album: Iridium5
+      description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce id felis nec ipsum ultrices commodo. Ut in lobortis libero.
+
+
+    - title: IMG_0052
+      img: IMG_0052
+      album: ZionNationalPark
+      description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce id felis nec ipsum ultrices commodo. Ut in lobortis libero.
+
+    - title: IMG_0062
+      img: IMG_0062
+      album: ZionNationalPark
+      description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce id felis nec ipsum ultrices commodo. Ut in lobortis libero.
+
+
+
+    - title: IMG_0475
+      img: IMG_0475
+      album: UsaSommer2015
+      description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce id felis nec ipsum ultrices commodo. Ut in lobortis libero.
+
+    - title: IMG_0169
+      img: IMG_0169
+      album: UsaSommer2015
+      description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce id felis nec ipsum ultrices commodo. Ut in lobortis libero.
+
+
+    - title: IMG_8919
+      img: IMG_8919
+      album: GirardRidge
+      description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce id felis nec ipsum ultrices commodo. Ut in lobortis libero.
+
+    - title: IMG_8950
+      img: IMG_8950
+      album: GirardRidge
+      description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce id felis nec ipsum ultrices commodo. Ut in lobortis libero.
+
+    - title: IMG_8822
+      img: IMG_8822
+      album: GirardRidge
+      description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce id felis nec ipsum ultrices commodo. Ut in lobortis libero.
+    - title: IMG_9002
+      img: IMG_9002
+      album: GirardRidge
+      description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce id felis nec ipsum ultrices commodo. Ut in lobortis libero.
+
