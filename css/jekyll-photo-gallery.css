@@ -38,11 +38,9 @@
 }
 
 .photoInfo2 {
-    margin-left: 10px;
-		float: left; 
-    width: 20%;
-		min-width: 350px;
-		white-space:nowrap;
+    margin-left: 50px;
+    float: left; 
+    white-space:nowrap;
     list-style-type: none;
 }
 

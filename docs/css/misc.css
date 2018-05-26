@@ -1,0 +1,13 @@
+p {
+    font-family: verdana;
+}
+
+a.icon:hover {
+    color: red;
+    text-decoration: none;
+}
+
+a.icon:visited, a.icon:link, a.icon:active {
+    color: black;
+    text-decoration: none;
+}

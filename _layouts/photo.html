@@ -26,7 +26,6 @@
   {% include head.html %}
   {% include header.html %}
 
-  <link rel="stylesheet" href="{{ site.url }}/css/main.css">
   <link rel="stylesheet" type="text/css" href="{{site.url}}/css/animsition.css">
   <link rel="stylesheet" type="text/css" href="{{site.url}}/css/jekyll-photo-gallery.css">
 
@@ -47,55 +46,46 @@
       <meta itemprop="image" content="{{ site.url }}/images/photography/{{ page.photo_url }}.jpg"/>
       <meta itemprop="thumbnailUrl" content="{{ site.url }}/images/photography/thumbnails/{{ page.photo_url }}.jpg"/>
       <meta itemprop="description" content="{{page.description}}"/>
-      <!-- todo: content location -->
-      <div id="photo" style="text-align: center;">
+
+      <div style="text-align: center; display: block;">
 				<div id="container1" style="height: 800px;">
-        <img id="picture" style="max-height:100%; max-width:100%;" src="{{ site.url }}/images/photography/{{ page.photo_url }}.jpg" class="entry-feature-image"
-             alt="{{ page.title }}">
-        <img id="picture" style="max-height:100%; max-width:100%;" src="{{ site.url }}/images/photography/{{ page.photo_url }}.original.jpg" class="entry-feature-image"
-             alt="{{ page.title }}">
+          <img id="picture" style="max-height:100%; max-width:100%;" src="{{ site.url }}/images/photography/{{ page.photo_url }}.jpg" class="entry-feature-image" alt="{{ page.title }}">
+          <img id="picture" style="max-height:100%; max-width:100%;" src="{{ site.url }}/images/photography/{{ page.photo_url }}.original.jpg" class="entry-feature-image" alt="{{ page.title }}">
 				</div>
       </div>
-</br>
+<!--
       <div>
-        <a class="animsition-link btn-social photobtn" data-animsition-out="fade-out-right"
-           href="{{ site.url }}/photography/{{page.previous_pic}}" style="float: left;"><</a>
-        <a class="animsition-link btn-social photobtn" data-animsition-out="fade-out-left"
-           href="{{ site.url }}/photography/{{page.next_pic}}" style="float: left;">></a>
+        <a class="animsition-link btn-social photobtn" data-animsition-out="fade-out-right" href="{{ site.url }}/photography/{{page.previous_pic}}" style="float: left;"><</a>
+        <a class="animsition-link btn-social photobtn" data-animsition-out="fade-out-left" href="{{ site.url }}/photography/{{page.next_pic}}" style="float: left;">></a>
       </div>
-      <br><br>
-
+-->
       <div class="photoInfoContainer">
         <div class="photoInfo1">
           <div>
             <h2 style="margin-bottom: 0px; margin-top: 0px;">{{page.title}}</h2>
-            {% capture photo_date %}
+            {%- capture photo_date -%}
 		        {% exiftag date_time, %}{{ page.photo_url }}.jpg{% endexiftag %}
-            {% endcapture %}
-            {% capture camera %}
+            {%- endcapture -%}
+            {%- capture camera -%}
             {% exiftag model, %}{{ page.photo_url }}.jpg{% endexiftag %}
-            {% endcapture %}
-            {% capture exposure %}
+            {%- endcapture -%}
+            {%- capture exposure -%}
             {% exiftag exposure_time, %}{{ page.photo_url }}.jpg{% endexiftag %}
-            {% endcapture %}
-            {% capture f_number %}
+            {%- endcapture -%}
+            {%- capture f_number -%}
             {% exiftag f_number, %}{{ page.photo_url }}.jpg{% endexiftag %}
-            {% endcapture %}
-            {% capture focal_length %}
+            {%- endcapture -%}
+            {%- capture focal_length -%}
             {% exiftag focal_length, %}{{ page.photo_url }}.jpg{% endexiftag %}
-            {% endcapture %}
-            {% capture iso %}
+            {%- endcapture -%}
+            {%- capture iso -%}
             {% exiftag iso_speed_ratings, %}{{ page.photo_url }}.jpg{% endexiftag %}
-            {% endcapture %}
-            <!-- TODO: insert better text, atm duplicate information .. -->
-            <span style="font-style: italic;">
-						Shot on {{photo_date }}
-            <span class="author" itemprop="author">by <span class="fn"><a href="{{ site.url }}/about/"
-                                                                          title="About {{ site.owner.name }}">{{
-              site.owner.name }}</a></span></span>
+            {%- endcapture -%}
+
+            <span style="font-style: italic;">Shot on {{photo_date }}
+             <span class="author" itemprop="author">by <span class="fn"><a href="{{ site.url }}/about/" title="About {{ site.owner.name }}">{{site.owner.name }}</a></span></span>
 						</span>
             </br>{{page.description}}
-            </br>More from {{page.album}} NASA Insight
           </div>
         </div>
         <div class="photoInfo2">
@@ -103,24 +93,21 @@
             <li>{% if camera contains 'iPhone' %} <i class="fa fa-mobile"></i> {% else %} <i
               class="fa fa-camera"></i> {% endif %} {{camera}}
             </li>
-            <li><i class="fa fa-cog"></i> Unknown lens @ {{focal_length}}mm</li>
+            <li><i class="fa fa-ruler-horizontal"></i> Unknown lens @ {{focal_length}}mm</li>
             <li><i class="fa fa-adjust"></i> ƒ/{{f_number}} | {{exposure}}s | ISO {{iso}}</li>
+						{% if page.location != nil %}
+						  <i class="fas fa-map-marker"></i> {{page.location}}
+						{% endif %}
 						{% if page.twitter != nil or page.facebook != nil or page.instagram != nil %}
             <li style="margin-top: 10px;">Posted to
 							{% if page.instagram != nil %}
-							<a href="{{page.instagram}}">
-								<i class="fa fa-2x fa-instagram"></i>
-							</a>
+							<a class="icon" href="{{page.instagram}}" target="_blank"><i class="fab fa-instagram"></i></a>
 							{% endif %}
 							{% if page.facebook != nil %}
-							<a href="{{page.facebook}}">
-								<i class="fa fa-2x fa-facebook-square"></i>
-							</a>
+							<a class="icon" href="{{page.facebook}}" target="_blank"><i class="fab fa-facebook-square"></i></a>
 							{% endif %}
 							{% if page.twitter != nil %}
-							<a href="{{page.twitter}}">
-								<i class="fa fa-2x fa-twitter"></i>
-							</a>
+							<a class="icon" href="{{page.twitter}}" target="_blank"><i class="fab fa-twitter"></i></a>
 							{% endif %}
 						</li>
 						{% endif %}

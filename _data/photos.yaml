@@ -1,21 +1,21 @@
 photos:
-    - title: Mily Way above Santa Cruz, CA
+    - title: Milky Way above Año Nuevo State Park
       layout: photo
       img: IMG_6282
-      img_original: IMG_6282.original
-      description: Taken from Pigeon Point Lighthouse not too long before New Moon. HWY 1 is surprisingly busy at 2 am.
+      description: Taken from Pigeon Point Lighthouse not too long before New Moon. HWY 1 was surprisingly busy at 2 am.
       instagram: https://www.instagram.com/p/Bir5rPflVS6/
       facebook: https://www.facebook.com/photo.php?fbid=1868361109883274
+      location: Pigeon Point Lighthouse, CA
 
     - title: Liftoff
-      img: IMG_0093
+      img: IMG_0092
       album: NasaInsight
       description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce id felis nec ipsum ultrices commodo. Ut in lobortis libero.
       instagram: https://www.instagram.com/p/BiZOvyeFDaG/
       facebook: https://www.facebook.com/odcinek/posts/1860941307291921
 
     - title: Liftoff (with NiSi Natural Night filter)
-      img: IMG_0092
+      img: IMG_0093
       album: NasaInsight
       description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce id felis nec ipsum ultrices commodo. Ut in lobortis libero.
       instagram: https://www.instagram.com/p/BiZOvyeFDaG/

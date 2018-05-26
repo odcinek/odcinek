@@ -3,7 +3,7 @@
 
 module Jekyll
   class PhotoPage < Page
-    def initialize(site, base, dir, photo_url, previous_pic, next_pic, title, description, facebook=nil, twitter=nil, instagram=nil)
+    def initialize(site, base, dir, photo_url, previous_pic, next_pic, title, description, facebook=nil, twitter=nil, instagram=nil, location=nil)
       @site = site
       @base = base
       @dir = dir
@@ -20,6 +20,7 @@ module Jekyll
       self.data['facebook'] = facebook
       self.data['twitter'] = twitter
       self.data['instagram'] = instagram
+      self.data['location'] = location
     end
   end
 
@@ -57,6 +58,7 @@ module Jekyll
           facebook = curr["facebook"]
           twitter = curr["twitter"]
           instagram = curr["instagram"]
+          location = curr["location"]
           description = curr["description"]
           title_stub = title.strip.gsub(' ', '-').gsub(/[^\w-]/, '') #remove non-alpha and replace spaces with hyphens
           if(prev != nil)
@@ -70,7 +72,7 @@ module Jekyll
             next_pic = ""
           end
           photoSlugs << photo_url
-          site.pages << PhotoPage.new(site, site.source, File.join(dir, title_stub), photo_url, previous_pic, next_pic, title, description, facebook, twitter, instagram)
+          site.pages << PhotoPage.new(site, site.source, File.join(dir, title_stub), photo_url, previous_pic, next_pic, title, description, facebook, twitter, instagram, location)
         }
       end
       site.data['photoSlugs'] = photoSlugs
