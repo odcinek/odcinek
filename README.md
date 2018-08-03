@@ -1,7 +1,7 @@
 ### odcinek.github.io
 
 ```
-gir clone git@github.com:odcinek/odcinek.git odcinek.github.io
+git clone git@github.com:odcinek/odcinek.git odcinek.github.io
 cd odcinek.github.io/
 source ~/.rvm/scripts/rvm
 rvm use
