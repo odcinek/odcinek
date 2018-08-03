@@ -6,6 +6,15 @@ cd odcinek.github.io/
 source ~/.rvm/scripts/rvm
 rvm use
 bundle install --path=.bundle --clean --binstubs=.sbin
-bundle exec jekyll build -V --trace --destination docs/
+```
+
+Run
+```
 bundle exec jekyll serve --destination docs/
+```
+
+Build
+```
+JEKYLL_ENV=production bundle exec jekyll build -V --trace --destination docs/
+git add . && git commit -m"Initial commit" && git push
 ```
