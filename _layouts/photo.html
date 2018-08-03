@@ -78,13 +78,14 @@
             {%- capture focal_length -%}
             {% exiftag focal_length, %}{{ page.photo_url }}.jpg{% endexiftag %}
             {%- endcapture -%}
+            {%- capture lens_model -%}
+            {% exiftag lens_model, %}{{ page.photo_url }}.jpg{% endexiftag %}
+            {%- endcapture -%}
             {%- capture iso -%}
             {% exiftag iso_speed_ratings, %}{{ page.photo_url }}.jpg{% endexiftag %}
             {%- endcapture -%}
 
-            <span style="font-style: italic;">Shot on {{photo_date }}
-             <span class="author" itemprop="author">by <span class="fn"><a href="{{ site.url }}/about/" title="About {{ site.owner.name }}">{{site.owner.name }}</a></span></span>
-						</span>
+            <span style="font-style: italic;">Shot on {{page.date }}</span>
             </br>{{page.description}}
           </div>
         </div>
@@ -93,10 +94,10 @@
             <li>{% if camera contains 'iPhone' %} <i class="fa fa-mobile"></i> {% else %} <i
               class="fa fa-camera"></i> {% endif %} {{camera}}
             </li>
-            <li><i class="fa fa-ruler-horizontal"></i> Unknown lens @ {{focal_length}}mm</li>
+            <li><i class="fa fa-eye"></i> {{ lens_model }} @ {{focal_length}}mm</li>
             <li><i class="fa fa-adjust"></i> ƒ/{{f_number}} | {{exposure}}s | ISO {{iso}}</li>
 						{% if page.location != nil %}
-						  <i class="fas fa-map-marker"></i> {{page.location}}
+						  <i class="fas fa-street-view"></i> {{page.location}}
 						{% endif %}
 						{% if page.twitter != nil or page.facebook != nil or page.instagram != nil %}
             <li style="margin-top: 10px;">Posted to
