@@ -1,195 +1,185 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <title>{% if page.title %}{{ page.title }} • {% endif %}{{ site.title }}</title>
-  {% if page.excerpt %}
-  <meta name="description" content="{{ page.excerpt | strip_html }}">
-  {% endif %}
-  {% if page.tags %}
-  <meta name="keywords" content="{{ page.tags | join: ', ' }}">
-  {% endif %}
-  {% if page.author %}
-  {% assign author = site.data.authors[page.author] %}{% else %}{% assign author = site.owner %}
-  {% endif %}
+	<head>
+		<meta charset="utf-8">
+		<title>{% if page.title %}{{ page.title }} • {% endif %}{{ site.title }}</title>
+		{% if page.excerpt %}
+		<meta name="description" content="{{ page.excerpt | strip_html }}">
+		{% endif %}
+		{% if page.tags %}
+		<meta name="keywords" content="{{ page.tags | join: ', ' }}">
+		{% endif %}
+		{% if page.author %}
+		{% assign author = site.data.authors[page.author] %}{% else %}{% assign author = site.owner %}
+		{% endif %}
 
-  <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.url }}">
+		<link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.url }}">
 
-  <link href="{{ site.url }}/atom.xml" type="application/atom+xml" rel="alternate" title="{{ site.title }} Atom Feed">
-  <link href="{{ site.url }}/sitemap.xml" type="application/xml" rel="sitemap" title="Sitemap">
+		<link href="{{ site.url }}/atom.xml" type="application/atom+xml" rel="alternate" title="{{ site.title }} Atom Feed">
+		<link href="{{ site.url }}/sitemap.xml" type="application/xml" rel="sitemap" title="Sitemap">
 
-  <meta name="HandheldFriendly" content="True">
-  <meta name="MobileOptimized" content="320">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="cleartype" content="on">
+		<meta name="HandheldFriendly" content="True">
+		<meta name="MobileOptimized" content="320">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="cleartype" content="on">
 
-  {% include head.html %}
-  {% include header.html %}
+		{% include head.html %}
 
-  <link rel="stylesheet" type="text/css" href="{{site.url}}/css/animsition.css">
-  <link rel="stylesheet" type="text/css" href="{{site.url}}/css/jekyll-photo-gallery.css">
+		<link rel="stylesheet" type="text/css" href="{{site.url}}/css/animsition.css">
+		<link rel="stylesheet" type="text/css" href="{{site.url}}/css/jekyll-photo-gallery.css">
 
-</head>
+	</head>
 
-<body id="js-body">
+	<body>
+		{% include header.html %}
 
-<div id="page-wrapper" class="animsition">
-  <article>
-    <div class="photoCentre" itemscope itemtype="http://schema.org/Photograph">
+		<div id="page-wrapper" class="animsition">
+			<article>
+				<div class="photoCentre" itemscope itemtype="http://schema.org/Photograph">
 
-      <!-- Schema.org BlogPost Invisible Meta-Data -->
-      <meta itemprop="author" content="{{ site.owner.name }}"/>
-      <meta itemprop="inLanguage" content="en-US"/>
-      <meta itemprop="isFamilyFriendly" content="true"/>
-      <meta itemprop="url" content="{{ site.url }}{{ page.url }}"/>
-      <meta itemprop="name" content="{{page.title}}"/>
-      <meta itemprop="image" content="{{ site.url }}/images/photography/{{ page.photo_url }}.jpg"/>
-      <meta itemprop="thumbnailUrl" content="{{ site.url }}/images/photography/thumbnails/{{ page.photo_url }}.jpg"/>
-      <meta itemprop="description" content="{{page.description}}"/>
+					<meta itemprop="author" content="{{ site.owner.name }}"/>
+					<meta itemprop="inLanguage" content="en-US"/>
+					<meta itemprop="isFamilyFriendly" content="true"/>
+					<meta itemprop="url" content="{{ site.url }}{{ page.url }}"/>
+					<meta itemprop="name" content="{{page.title}}"/>
+					<meta itemprop="image" content="{{ site.url }}/images/photography/{{ page.photo_url }}.jpg"/>
+					<meta itemprop="thumbnailUrl" content="{{ site.url }}/images/photography/thumbnails/{{ page.photo_url }}.jpg"/>
+					<meta itemprop="description" content="{{page.description}}"/>
 
-      <div style="text-align: center; display: block;">
-				<div id="container1" style="height: 800px;">
-          <img id="picture" style="max-height:100%; max-width:100%;" src="{{ site.url }}/images/photography/{{ page.photo_url }}.jpg" class="entry-feature-image" alt="{{ page.title }}">
-          <img id="picture" style="max-height:100%; max-width:100%;" src="{{ site.url }}/images/photography/{{ page.photo_url }}.original.jpg" class="entry-feature-image" alt="{{ page.title }}">
-				</div>
-      </div>
-<!--
-      <div>
-        <a class="animsition-link btn-social photobtn" data-animsition-out="fade-out-right" href="{{ site.url }}/photography/{{page.previous_pic}}" style="float: left;"><</a>
-        <a class="animsition-link btn-social photobtn" data-animsition-out="fade-out-left" href="{{ site.url }}/photography/{{page.next_pic}}" style="float: left;">></a>
-      </div>
--->
-      <div class="photoInfoContainer">
-        <div class="photoInfo1">
-          <div>
-            <h2 style="margin-bottom: 0px; margin-top: 0px;">{{page.title}}</h2>
-            {%- capture photo_date -%}
-		        {% exiftag date_time, %}{{ page.photo_url }}.jpg{% endexiftag %}
-            {%- endcapture -%}
-            {%- capture camera -%}
-            {% exiftag model, %}{{ page.photo_url }}.jpg{% endexiftag %}
-            {%- endcapture -%}
-            {%- capture exposure -%}
-            {% exiftag exposure_time, %}{{ page.photo_url }}.jpg{% endexiftag %}
-            {%- endcapture -%}
-            {%- capture f_number -%}
-            {% exiftag f_number, %}{{ page.photo_url }}.jpg{% endexiftag %}
-            {%- endcapture -%}
-            {%- capture focal_length -%}
-            {% exiftag focal_length, %}{{ page.photo_url }}.jpg{% endexiftag %}
-            {%- endcapture -%}
-            {%- capture lens_model -%}
-            {% exiftag lens_model, %}{{ page.photo_url }}.jpg{% endexiftag %}
-            {%- endcapture -%}
-            {%- capture iso -%}
-            {% exiftag iso_speed_ratings, %}{{ page.photo_url }}.jpg{% endexiftag %}
-            {%- endcapture -%}
+					<div style="text-align: center; display: block;">
+						<div id="container1" style="height: 800px;">
+							<img id="picture" style="max-height:100%; max-width:100%;" src="{{ site.url }}/images/photography/{{ page.photo_url }}.jpg" class="entry-feature-image" alt="{{ page.title }}">
+							<img id="picture" style="max-height:100%; max-width:100%;" src="{{ site.url }}/images/photography/{{ page.photo_url }}.original.jpg" class="entry-feature-image" alt="{{ page.title }}">
+						</div>
+					</div>
 
-            <span style="font-style: italic;">Shot on {{page.date }}</span>
-            </br>{{page.description}}
-          </div>
-        </div>
-        <div class="photoInfo2">
-          <ul>
-            <li>{% if camera contains 'iPhone' %} <i class="fa fa-mobile"></i> {% else %} <i
-              class="fa fa-camera"></i> {% endif %} {{camera}}
-            </li>
-            <li><i class="fa fa-eye"></i> {{ lens_model }} @ {{focal_length}}mm</li>
-            <li><i class="fa fa-adjust"></i> ƒ/{{f_number}} | {{exposure}}s | ISO {{iso}}</li>
-						{% if page.location != nil %}
-						  <i class="fas fa-street-view"></i> {{page.location}}
-						{% endif %}
-						{% if page.twitter != nil or page.facebook != nil or page.instagram != nil %}
-            <li style="margin-top: 10px;">Posted to
-							{% if page.instagram != nil %}
-							<a class="icon" href="{{page.instagram}}" target="_blank"><i class="fab fa-instagram"></i></a>
-							{% endif %}
-							{% if page.facebook != nil %}
-							<a class="icon" href="{{page.facebook}}" target="_blank"><i class="fab fa-facebook-square"></i></a>
-							{% endif %}
-							{% if page.twitter != nil %}
-							<a class="icon" href="{{page.twitter}}" target="_blank"><i class="fab fa-twitter"></i></a>
-							{% endif %}
-						</li>
-						{% endif %}
-          </ul>
-        </div>
-      </div>
-    </div>
-  </article>
-</div>
+					<div class="container">
+						<div class="row">
+							<div class="col-lg">
+								<h2 style="margin-bottom: 0px; margin-top: 0px;">{{page.title}}</h2>
+								{%- capture photo_date -%}
+								{% exiftag date_time, %}{{ page.photo_url }}.jpg{% endexiftag %}
+								{%- endcapture -%}
+								{%- capture camera -%}
+								{% exiftag model, %}{{ page.photo_url }}.jpg{% endexiftag %}
+								{%- endcapture -%}
+								{%- capture exposure -%}
+								{% exiftag exposure_time, %}{{ page.photo_url }}.jpg{% endexiftag %}
+								{%- endcapture -%}
+								{%- capture f_number -%}
+								{% exiftag f_number, %}{{ page.photo_url }}.jpg{% endexiftag %}
+								{%- endcapture -%}
+								{%- capture focal_length -%}
+								{% exiftag focal_length, %}{{ page.photo_url }}.jpg{% endexiftag %}
+								{%- endcapture -%}
+								{%- capture lens_model -%}
+								{% exiftag lens_model, %}{{ page.photo_url }}.jpg{% endexiftag %}
+								{%- endcapture -%}
+								{%- capture iso -%}
+								{% exiftag iso_speed_ratings, %}{{ page.photo_url }}.jpg{% endexiftag %}
+								{%- endcapture -%}
 
-{% include footer.html %}
+								<span style="font-style: italic;">Shot on {{page.date }}</span>
+								</br>{{page.description}}
+							</div>
+							<div class="col-lg">
+								<ul>
+									<li><i class="fa fa-camera"></i> {{camera}}</li>
+									<li><i class="fa fa-eye"></i> {{ lens_model }} @ {{focal_length}}mm</li>
+									<li><i class="fa fa-adjust"></i> ƒ/{{f_number}} | {{exposure}}s | ISO {{iso}}</li>
+									{% if page.location != nil %}
+										<li><i class="fas fa-street-view"></i> {{page.location}}</li>
+									{% endif %}
 
+									{% if page.twitter != nil or page.facebook != nil or page.instagram != nil %}
+									<li style="margin-top: 10px;">Posted to
+										{% if page.instagram != nil %}
+										<a class="icon" href="{{page.instagram}}" target="_blank"><i class="fab fa-instagram"></i></a>
+										{% endif %}
+										{% if page.facebook != nil %}
+										<a class="icon" href="{{page.facebook}}" target="_blank"><i class="fab fa-facebook-square"></i></a>
+										{% endif %}
+										{% if page.twitter != nil %}
+										<a class="icon" href="{{page.twitter}}" target="_blank"><i class="fab fa-twitter"></i></a>
+										{% endif %}
+									</li>
+									{% endif %}
+								</ul>
+							</div>
+						</div>
+					</div>
+			</article>
 
-  <script src="{{ site.url }}/js/vendor/jquery-1.9.1.min.js"></script>
-  <script src="{{ site.url }}/js/plugins/jquery.event.move.js"></script>
-  <script src="{{ site.url }}/js/plugins/jquery.twentytwenty.js"></script>
-	<script src="{{ site.url }}/js/plugins/jquery.animsition.min.js"></script>
+			{% include footer.html %}
 
-<script>
-  var photo = $("#photo");
-  var picture = $("#picture");
+			<script src="{{ site.url }}/js/vendor/jquery-1.9.1.min.js"></script>
+			<script src="{{ site.url }}/js/plugins/jquery.event.move.js"></script>
+			<script src="{{ site.url }}/js/plugins/jquery.twentytwenty.js"></script>
+			<script src="{{ site.url }}/js/plugins/jquery.animsition.min.js"></script>
 
-  document.onkeydown = function (e) {
-    switch (e.keyCode) {
-      case 37: //left click
-        window.location.href = '{{ site.url }}/photography/{{page.previous_pic}}';
-        break;
-      case 39: //right click
-        window.location.href = '{{ site.url }}/photography/{{page.next_pic}}';
-        break;
-    }
-  };
+			<script>
+				var photo = $("#photo");
+				var picture = $("#picture");
 
-  function fitImageSize(){
-    photo.height("100%");
-    var imageMax = $(window).height()/100*70;
-    var currentContentHeight = photo.height();
-    console.log(imageMax+"  "+currentContentHeight);
-    if(currentContentHeight > imageMax){
-      photo.height(imageMax);
-      photo.width("auto");
-      photo.marginLeft = "auto";
-      photo.height = picture.height;
-    }
-  }
-  fitImageSize();
+				document.onkeydown = function (e) {
+					switch (e.keyCode) {
+						case 37: //left click
+							window.location.href = '{{ site.url }}/photography/{{page.previous_pic}}';
+							break;
+						case 39: //right click
+							window.location.href = '{{ site.url }}/photography/{{page.next_pic}}';
+							break;
+					}
+				};
 
-  //window.addEventListener('resize', fitImageSize(), true);
-  window.onresize = function(event) {
-    fitImageSize();
-  };
+				function fitImageSize(){
+					photo.height("100%");
+					var imageMax = $(window).height()/100*70;
+					var currentContentHeight = photo.height();
+					console.log(imageMax+"  "+currentContentHeight);
+					if(currentContentHeight > imageMax){
+						photo.height(imageMax);
+						photo.width("auto");
+						photo.marginLeft = "auto";
+						photo.height = picture.height;
+					}
+				}
+				fitImageSize();
 
-  $(document).ready(function () {
-    fitImageSize();
+				//window.addEventListener('resize', fitImageSize(), true);
+				window.onresize = function(event) {
+					fitImageSize();
+				};
 
-    //Dynamic Transition Support
-    $(".animsition").animsition({
-      inClass: 'fade-in',
-      outClass: 'fade-out',
-      inDuration: 1500,
-      outDuration: 400,
-      linkElement: '.animsition-link',
-      // e.g. linkElement: 'a:not([target="_blank"]):not([href^=#])'
-      loading: true,
-      loadingParentElement: 'body', //animsition wrapper element
-      loadingClass: 'animsition-loading',
-      unSupportCss: [
-        'animation-duration',
-        '-webkit-animation-duration',
-        '-o-animation-duration'
-      ],
-      //"unSupportCss" option allows you to disable the "animsition" in case the css property in the array is not supported by your browser.
-      //The default setting is to disable the "animsition" in a browser that does not support "animation-duration".
-      overlay: false,
-      overlayClass: 'animsition-overlay-slide',
-      overlayParentElement: 'body'
-    });
-  });
-</script>
+				$(document).ready(function () {
+					fitImageSize();
 
-<script src="{{ site.url }}/js/main.js"></script>
-</body>
+					//Dynamic Transition Support
+					$(".animsition").animsition({
+						inClass: 'fade-in',
+						outClass: 'fade-out',
+						inDuration: 1500,
+						outDuration: 400,
+						linkElement: '.animsition-link',
+						// e.g. linkElement: 'a:not([target="_blank"]):not([href^=#])'
+						loading: true,
+						loadingParentElement: 'body', //animsition wrapper element
+						loadingClass: 'animsition-loading',
+						unSupportCss: [
+							'animation-duration',
+							'-webkit-animation-duration',
+							'-o-animation-duration'
+						],
+						//"unSupportCss" option allows you to disable the "animsition" in case the css property in the array is not supported by your browser.
+						//The default setting is to disable the "animsition" in a browser that does not support "animation-duration".
+						overlay: false,
+						overlayClass: 'animsition-overlay-slide',
+						overlayParentElement: 'body'
+					});
+				});
+			</script>
+
+			<script src="{{ site.url }}/js/main.js"></script>
+	</body>
 
 </html>
