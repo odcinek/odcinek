@@ -9,7 +9,6 @@
     {% assign author = site.data.authors[page.author] %}{% else %}{% assign author = site.owner %}
     {% endif %}
 
-    <!-- Replace with your own includes -->
     {% include head.html %}
     {% include header.html %}
 
@@ -25,32 +24,20 @@
 
     <link rel="stylesheet" type="text/css" href="{{site.url}}/css/jekyll-photo-gallery.css">
     <link rel="stylesheet" href="{{ site.url }}/css/justifiedGallery.min.css">
-    <![endif]-->
 </head>
 
 <body id="js-body">
 
-<div id="main" role="main" style="width: 70%; margin: auto; margin-top: 30px;">
+<div id="main" role="main" style="width: 90%; min-width: 400px; margin: auto;">
     <div class="wrap">
-
-			<!--
-        <div class="page-feature">
-            <div class="page-image">
-                <img src="{{ site.url }}/images/headers/header.jpg" class="page-feature-image" alt="{{ page.title }}">
-                {% if page.image.credit %}{% include image-credit.html %}{% endif %}
-            </div>
-        </div>
-			-->
-
         <div class="photoStreamTitle">
             <div id="gallery" style="display:none; margin-bottom: 20px;"></div>
         </div>
-    </div><!-- /.wrap -->
-</div><!-- /#main -->
+    </div>
+</div>
 
 <script src="{{ site.url }}/js/vendor/jquery-1.9.1.min.js"></script>
 <script src="{{ site.url }}/js/plugins/jquery.justifiedGallery.min.js"></script>
-
 
 <script>
     var photos = [];
@@ -70,12 +57,12 @@
         var GALLERY_FADE_IN = 500;
 
         $("#gallery").justifiedGallery({
-            rowHeight : 220,
-            maxRowHeight: 340,
+            rowHeight : 280,
+						waitThumbnailsLoad: false,
+            maxRowHeight: 280,
             margins : 5,
-            border : 0,
+            border : -1,
             fixedHeight: false,
-            lastRow : 'nojustify',
             captions: true
         });
 
@@ -121,7 +108,6 @@
     }
 </script>
 
-<!-- Replace with your own foot include or remove -->
 {% include footer.html %}
 </body>
 </html>

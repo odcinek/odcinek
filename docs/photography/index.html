@@ -7,7 +7,6 @@
     
     
 
-    <!-- Replace with your own includes -->
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.4.0 -->
@@ -41,7 +40,7 @@
 <link rel="stylesheet" type="text/css" href="http://088467a3fba.tupile.us/css/misc.css"><link type="application/atom+xml" rel="alternate" href="http://088467a3fba.tupile.us/feed.xml" title="Marcin Sawicki" />
     <header class="site-header">
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-sm navbar-light bg-light">
     <a class="site-title" href="/">
       <img src="http://088467a3fba.tupile.us/images/headers/black-low-res.png" alt="Photography" style="width:200px; margin: 5px;">
     </a>
@@ -49,7 +48,7 @@
     <span class="navbar-toggler-icon"></span>
   </button>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+  <div class="collapse navbar-collapse" id="navbarSupportedContent" style="text-algin: right;">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
           <a class="nav-link" href="/">Notes</a>
@@ -86,32 +85,20 @@
 
     <link rel="stylesheet" type="text/css" href="http://088467a3fba.tupile.us/css/jekyll-photo-gallery.css">
     <link rel="stylesheet" href="http://088467a3fba.tupile.us/css/justifiedGallery.min.css">
-    <![endif]-->
 </head>
 
 <body id="js-body">
 
-<div id="main" role="main" style="width: 70%; margin: auto; margin-top: 30px;">
+<div id="main" role="main" style="width: 90%; min-width: 400px; margin: auto;">
     <div class="wrap">
-
-			<!--
-        <div class="page-feature">
-            <div class="page-image">
-                <img src="http://088467a3fba.tupile.us/images/headers/header.jpg" class="page-feature-image" alt="Photography">
-                
-            </div>
-        </div>
-			-->
-
         <div class="photoStreamTitle">
             <div id="gallery" style="display:none; margin-bottom: 20px;"></div>
         </div>
-    </div><!-- /.wrap -->
-</div><!-- /#main -->
+    </div>
+</div>
 
 <script src="http://088467a3fba.tupile.us/js/vendor/jquery-1.9.1.min.js"></script>
 <script src="http://088467a3fba.tupile.us/js/plugins/jquery.justifiedGallery.min.js"></script>
-
 
 <script>
     var photos = [];
@@ -215,12 +202,12 @@
         var GALLERY_FADE_IN = 500;
 
         $("#gallery").justifiedGallery({
-            rowHeight : 220,
-            maxRowHeight: 340,
+            rowHeight : 280,
+						waitThumbnailsLoad: false,
+            maxRowHeight: 280,
             margins : 5,
-            border : 0,
+            border : -1,
             fixedHeight: false,
-            lastRow : 'nojustify',
             captions: true
         });
 
@@ -266,7 +253,6 @@
     }
 </script>
 
-<!-- Replace with your own foot include or remove -->
 <footer class="site-footer">
 
   <div class="wrapper">

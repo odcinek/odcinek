@@ -54,6 +54,8 @@ header_pages:
 #   - vendor/gems/
 #   - vendor/ruby/
 
+show_excerpts: true
+
 #Jekyll-Photo-Gallery Settings
 exiftag:
  sources:

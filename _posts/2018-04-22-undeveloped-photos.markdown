@@ -15,8 +15,8 @@ Having all that said - publishing both *before* and *after* shots is a form of *
 
 Most of photos I publish here have a *before* and *after* versions (whenever feasible). Having absolutely no adjustements in *before* version is **not** a hard and fast rule of mine - for example lens corrections and vignetting adjustements will get applied to both, as I view them as merely compensating for lenses' shortcomings.
 
-Edit May 15, 2018
+#### Edit May 15, 2018
 
 * Stacking - for either focus, exposure, or noise reduction
-* Compositing - bad (or *most*) composites are awful. I find moving the sky to fit your composition as lazy
+* Compositing - bad (*most?*) composites are awful. I find moving the sky to fit your composition to be lazy.
 * Stitching - great, if used in moderation

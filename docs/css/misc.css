@@ -15,3 +15,10 @@ a.icon:visited, a.icon:link, a.icon:active {
 .nav-link {
     display: inline-block;
 }
+
+.fade2 {
+	text-align: justify;
+  background: -webkit-linear-gradient(#212529, #fff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
